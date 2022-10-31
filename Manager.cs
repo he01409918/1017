@@ -9,9 +9,12 @@ public class Manager : MonoBehaviour
 
     public Text scoreText;
 
+    public GameObject[] balloon;
+
     void Start()
     {
         Instance = this;
+        GameObject _balloon = Instantiate(balloon[Random.Range(0 , balloon.Length)], this.transform.position, this.transform.rotation);
         OnAddScore(0);
     }
     public void OnAddScore(int value)
@@ -19,4 +22,6 @@ public class Manager : MonoBehaviour
         currentScore += value;
         scoreText.text = currentScore.ToString();
     }
+
+
 }
