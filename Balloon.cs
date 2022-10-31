@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Balloon : MonoBehaviour
 {
+    public GameObject effect;
     public int score;
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("Bullet"))
         {
+            GameObject fx = Instantiate(effect , this.transform.position , this.transform.rotation);
+            Destroy(fx, 5);
             Manager.Instance.OnAddScore(score);
             Destroy(gameObject);
         }
