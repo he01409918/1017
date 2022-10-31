@@ -14,9 +14,16 @@ public class Manager : MonoBehaviour
     void Start()
     {
         Instance = this;
-        GameObject _balloon = Instantiate(balloon[Random.Range(0 , balloon.Length)], this.transform.position, this.transform.rotation);
+        InitBalloon();
         OnAddScore(0);
     }
+
+    private void InitBalloon()
+    {
+        Vector3 position = new Vector3(8.9f, -2.24f, 27.19f);
+        GameObject _balloon = Instantiate(balloon[Random.Range(0, balloon.Length)], position, this.transform.rotation);
+    }
+
     public void OnAddScore(int value)
     {
         currentScore += value;
