@@ -20,7 +20,7 @@ public class Manager : MonoBehaviour
 
     private void InitBalloon()
     {
-        Vector3 position = new Vector3(8.9f, -2.24f, 27.19f);
+        Vector3 position = new Vector3(Random.Range(3f,18f), Random.Range(0f,3f), Random.Range(23f,33f));
         GameObject _balloon = Instantiate(balloon[Random.Range(0, balloon.Length)], position, this.transform.rotation);
     }
 
