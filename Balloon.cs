@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +9,7 @@ public class Balloon : MonoBehaviour
     {
         if (collision.collider.CompareTag("Bullet"))
         {
+            Manager.Instance.OnAddScore(score);
             Destroy(gameObject);
         }
     }
